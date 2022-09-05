@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { AppWrap ,MotionWrap} from "../../wrapper";
 import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
 import { urlFor, client } from "../../client";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Skills.scss";
 
 const Skills = () => {
@@ -16,7 +16,6 @@ const Skills = () => {
     client.fetch(query).then((data) => {
       console.log(data);
       setExperience(data);
-     
     });
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
@@ -49,7 +48,8 @@ const Skills = () => {
         </motion.div>
         <div className="app__skills-exp">
           {experience?.map((experience) => (
-            <motion.div className="app__skills-exp-item" key={experience.year}>
+            <motion.div className="app__skills-exp-item"
+                         key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
@@ -72,7 +72,6 @@ const Skills = () => {
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
-                
                     >
                       {work.desc}
                     </ReactTooltip>
@@ -88,6 +87,6 @@ const Skills = () => {
 };
 export default AppWrap(
   MotionWrap(Skills, "app__skills"),
-  "about",
+  "skills",
   "app__whitebg"
 );

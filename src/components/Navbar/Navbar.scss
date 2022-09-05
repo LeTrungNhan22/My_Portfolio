@@ -46,7 +46,6 @@
       height: 5px;
       background: transparent;
       border-radius: 50%;
-
       margin-bottom: 5px;
     }
     a {
@@ -63,7 +62,10 @@
     }
     &:hover {
       div {
+        transition: all 0.3s ease-in-out;
         background-color: var(--secondary-color);
+        width: 70%;
+        height: 1px;
       }
     }
   }
